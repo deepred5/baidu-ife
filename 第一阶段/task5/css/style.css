@@ -1,0 +1,162 @@
+body, ul, li, p, h3, input, textarea {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-size: 14px;
+	background: #dedede;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+}
+#header {
+	height: 60px;
+	background: #333;
+	padding: 0 20px 0 40px;
+	min-width: 560px;
+}
+#header ul {
+	float: right;
+	height: 60px;
+	line-height: 60px;
+	font-size: 12px;
+}
+#header li {
+	float: left;
+	color: #040404;
+	margin-left: 20px;
+}
+#header li a {
+	color: #eaebed;
+	display: block;
+
+}
+#header li a:hover {
+	color: #a9aeb4;
+}
+
+#content {
+	padding: 20px;
+	min-width: 560px;
+}
+#sidebar {
+	float: right;
+	width: 325px;
+	padding: 20px;
+	background: #fefefe;
+	box-shadow: 4px 4px 2px #9f9f9f;
+	height: 456px;
+}
+#sidebar h3 {
+	height: 38px;
+	line-height: 38px;
+	border-left: 3px solid #cdcdcd;
+	padding-left: 11px;
+
+}
+#sidebar form {
+	font-size: 12px;
+	padding-top: 11px;
+}
+#sidebar input[type=text], #sidebar input[type=password] {
+	border: 1px solid #cec8d2;
+	width: 127px;
+	height: 19px;
+}
+#sidebar input[type=submit] {
+	width: 322px;
+	height: 38px;
+	background: #3457cf;
+	color: #fff9ff;
+	border: 0;
+	border-radius: 10px;
+	font-size: 14px;
+}
+#sidebar label {
+	padding-right: 14px;
+	width: 96px;
+	display: inline-block;
+	text-align: right;
+}
+#sidebar p {
+	margin-bottom: 10px;
+}
+#sidebar p span {
+	display: block;
+	padding: 13px 0 0 116px;
+	padding-bottom: 14px;
+	color: #a7b1b0;
+}
+#sidebar .person-des {
+	vertical-align: top;
+}
+#sidebar textarea {
+	width: 207px;
+	height: 97px;
+}
+
+#main {
+	margin-right: 385px;
+}
+.article {
+	padding: 20px;
+	box-shadow: 4px 4px 2px #9f9f9f;
+	margin-bottom: 20px;
+	background: #fefefe;
+	border: 1px solid #cccccc;
+}
+.article h3 {
+	color: #5f555e;
+}
+.article .author {
+	color: #808080;
+	text-indent: 0;
+}
+.article p {
+	line-height: 26px;
+	text-indent: 2em;
+}
+.article li {
+	line-height: 25px;
+}
+.article .pic-list {
+	overflow: hidden;
+}
+.article .pic-list li {
+	width: 102px;
+	height: 104px;
+	padding: 10px;
+	border: 1px solid #cccccc;
+	float: left;
+	margin: 0 20px 20px 0;
+}
+.article .pic-list p {
+	text-indent: 0;
+	text-align: center;
+}
+.article table {
+	border-collapse: collapse;
+	width: 100%;
+}
+.article table th {
+	background: #333;
+	color: #fff;
+	text-align: left;
+}
+.article table tr:last-child {
+	background: #ccc;
+}
+.article td, .article th {
+	padding: 5px;
+}
+#footer {
+	height: 70px;
+	background: #000;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+	line-height: 70px;
+}

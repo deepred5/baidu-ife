@@ -1,0 +1,352 @@
+body, p, h1, h2, h3, dl, dt, dd, ul, li {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #ccc;
+	font-family: "SimHei";
+}
+li {
+	list-style: none;
+}
+.clearfix {
+	zoom: 1;
+}
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+#content {
+	width: 893px;
+	height: 1386px;
+	margin: 0 auto;
+	padding: 0 43px 0 44px;
+	background: #fff;
+}
+#header {
+	height: 61px;
+	border-bottom: 2px solid #938e8c;
+	font-size: 12px;
+	position: relative;
+}
+#header h1 {
+	color: #fff;
+	width: 111px;
+	height: 15px;
+	background: #d45d5c;
+	padding-top: 46px;
+	text-indent: 7px;
+	font-size: 12px;
+}
+#header p {
+	position: absolute;
+	color: #d45d5c;
+	right: 1px;
+	bottom: 0px;
+}
+
+#part1 {
+	margin-top: 34px;
+	height: 301px;
+}
+#part1 .banner {
+	position: relative;
+	width: 641px;
+	height: 301px;
+	float: left;
+}
+#part1 .banner div {
+	width: 191px;
+	height: 301px;
+	position: absolute;
+	opacity: .5;
+}
+#part1 .left-mask {
+	left: 0;
+	background: #418c58;
+}
+#part1 .right-mask {
+	right: 0;
+	background: #cc7680;
+}
+#part1 .side {
+	float: right;
+	width: 204px;
+	height: 293px;
+	border-top: 2px solid #cc8091;
+	padding-top: 6px;
+	position: relative;
+}
+#part1 .side h3 {
+	font-family: "Microsoft YaHei";
+	font-size: 24px;
+	font-weight: normal;
+	border-bottom: 2px solid #888686;
+	display: inline-block;
+	font-variant:small-caps;
+}
+#part1 .side p {
+	line-height: 10px;
+	font-size: 12px;
+	font-family: "KaiTi";
+	padding-top: 4px;
+}
+.num1, .num2, .css1, .css2 {
+	font-family: "Microsoft YaHei";
+}
+#part1 .side .num1 {
+	font-size: 116px;
+	color: #75b86b;
+	font-style: italic;
+	
+	display: block;
+	text-indent: -20px;
+}
+#part1 .side .num2 {
+	font-size: 55px;
+	color: #cc8091;
+	display: block;
+	margin-top: -5px;
+}
+#part1 .side .css1 {
+	font-size: 21px;
+	color: #cc8091;
+	position: absolute;
+	bottom: 10px;
+	left: 90px;
+}
+#part1 .side .css2 {
+	font-size: 12px;
+	color: #e6e5e5;
+	position: absolute;
+	bottom: 0;
+	left: 90px;
+}
+
+#part2 {
+	padding-top: 42px;
+	font-family: "Microsoft YaHei";
+	font-size: 12px;
+	height: 232px;
+}
+#part2 dl {
+	float: left;
+	margin-right: 27px;
+}
+#part2 dt {
+	font-size: 16px;
+	border-bottom: 2px solid;
+	display:inline;
+}
+#part2 .what {
+	width: 230px;
+}
+#part2 .when {
+	width: 205px;
+}
+#part2 .how {
+	width: 135px;
+}
+#part2 .what dt {
+	color: #418c59;
+}
+#part2 .when dt {
+	color: #d5a160;
+}
+#part2 .how dt {
+	color: #cc7680;
+}
+#part2 dd {
+	font-family: "SimSun";
+	line-height: 16px;
+	color: #767777;
+	padding-top: 10px;
+}
+#part2 .how dd + dd {
+	line-height: 21px;
+}
+#part2 .how dd span {
+	color: #dd8f8e;
+}
+
+#part3 {
+	font-family: "SimHei";
+	height: 646px;
+	border-bottom: 2px solid #938e8c;
+}
+#part3 .left {
+	float: left;
+	width: 415px;
+}
+#part3 h3 {
+	font-size: 42px;
+	color: #11456b;
+}
+#part3 h3 span {
+	font-size: 72px;
+	color: #f4e528;
+	font-style: italic;
+}
+#part3 h3 + h3 {
+	font-size: 33px;
+}
+#part3 .title {
+	padding-bottom: 13px;
+	border-bottom: 2px solid #10456b;
+}
+#part3 .article {
+	padding-top: 25px;
+	font-family: "SimSun";
+	height: 465px;
+}
+#part3 .article span {
+	color: #f5e327;
+	font-size: 70px;
+	float: left;
+	font-family: "Microsoft YaHei";
+	margin: 0 10px 10px 0;
+	line-height: 70px;
+}
+#part3 .article p {
+	line-height: 16px;
+	font-size: 12px;
+	color: #767777;
+	text-indent: 2em;
+}
+#part3 .article img {
+	float: right;
+	margin: 0 0 0 20px;
+}
+#part3 .right {
+	float: right;
+	position: relative;
+}
+#part3 .pic {
+	position: relative;
+	width: 458px;
+	height: 257px;
+	font-family: "Microsoft YaHei";
+}
+#part3 .pic .mask {
+	position: absolute;
+	background: #000;
+	opacity: .4;
+	width: 458px;
+	height: 60px;
+	bottom: 0;
+	left: 0;
+}
+#part3 .pic .border {
+	position: absolute;
+	width: 5px;
+	height: 44px;
+	background: #72b16a;
+	left: 38px;
+	bottom: 8px;
+}
+#part3 .pic strong {
+	position: absolute;
+	color: #fff;
+	font-size: 26px;
+	font-weight: normal;
+	left: 53px;
+	bottom: 14px;
+}
+#part3 .pic span {
+	position: absolute;
+	left: 166px;
+	bottom: 14px;
+	font-size: 12px;
+	color: #72b16a;
+	font-style: italic;
+}
+#part3 .pic2 {
+	width: 458px;
+	height: 318px;
+	background: #eeedd6;
+	margin-top: 31px;
+}
+#part3 .pic2 ul {
+	padding: 31px 22px 0 31px;
+}
+#part3 .pic2 li {
+	font-size: 14px;
+	color: #5a5b5b;
+	font-family: "SimSun";
+	padding-left: 16px;
+	background: url(../img/icon.png) no-repeat left bottom;
+	height: 16px;
+	margin-bottom: 25px;
+}
+#part3 .pic2 li span {
+	font-size: 12px;
+	font-style: italic;
+}
+#part3 .box {
+	width: 260px;
+	height: 160px;
+	background: #d45d5c;
+	position: absolute;
+	bottom: 0;
+	font-family: "Microsoft YaHei";
+	color: #fff;
+}
+#part3 .box .zero {
+	font-size: 110px;
+	position: absolute;
+	top: 10px;
+	left: 13px;
+
+}
+#part3 .box .border {
+	position: absolute;
+	background: #fff;
+	width: 2px;
+	height: 86px;
+	left: 78px;
+	top: 40px;
+}
+#part3 .box p {
+	font-size: 21px;
+	line-height: 25px;
+	font-style: italic;
+	font-family: "SimHei";
+	position: absolute;
+	left: 87px;
+	top: 47px;
+}
+#part3 .box p + p {
+	font-size: 12px;
+	line-height: 10px;
+	top: 100px;
+}
+#part3 .quote {
+	width: 160px;
+	position: absolute;
+	right: 0;
+}
+#part3 .quote p {
+	text-indent: 42px;
+	margin-top: 10px;
+}
+#part3 .quote span {
+	font-size: 72px;
+	color: #d45d5c;
+	position: absolute;
+}
+#part3 .quote .mark1 {
+	left: -40px;
+}
+#part3 .quote .mark2 {
+	right: -14px;
+	top: 80px;
+}
+
+#footer p {
+	text-align: right;
+	color: #d45d5c;
+	font-family: "SimHei";
+	font-size: 12px;
+	line-height: 14px;
+}

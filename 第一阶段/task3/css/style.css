@@ -1,0 +1,42 @@
+body {
+	background: #eee;
+}
+.clearfix {
+	zoom: 1;
+}
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.parent {
+	padding: 20px;
+	border: 1px solid #000;
+	min-width: 550px;
+}
+.left-side {
+	padding: 20px;
+	width: 160px;
+	border: 1px solid #000;
+	float: left;
+}
+.left-side p {
+	float: right;
+}
+.content {
+	padding: 20px;
+	border: 1px solid #000;
+	margin: 0 140px 0 220px;
+}
+.right-side {
+	float: right;
+	padding: 20px;
+	border: 1px solid #000;
+	width: 80px;
+}
+.right-side img {
+	margin-bottom: 20px;
+}
+.right-side img:last-child {
+	margin: 0;
+}
