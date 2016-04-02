@@ -1,0 +1,204 @@
+body, ul, p, h1, h2, h3, input, ul {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Microsoft Yahei", "SimSun", "SimHei", sans-serif;
+	font-size: 12px;
+	background: #fff;
+}
+ul {
+	list-style: none;
+}
+img {
+	border: none;
+}
+a {
+	text-decoration: none;
+}
+
+.clearfix {
+	zoom: 1;
+}
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#header {
+	height: 56px;
+	width: 100%;
+	background: #2189bf;
+}
+#header .wrap {
+	width: 1280px;
+	margin: 0 auto;
+	position: relative;
+	height: 56px;
+}
+#header img {
+	padding: 10px 0 0 50px;
+}
+#header input.search {
+	border: 0;
+	width: 263px;
+	height: 18px;
+	border-radius: 15px;
+	position: absolute;
+	right: 156px;
+	bottom: 15px;
+	padding: 5px 17px 5px 33px;
+	background: #fff url(../img/search.png) no-repeat 15px 5px;
+}
+#header .login {
+	color: #fff;
+	font-size: 12px;
+	font-family: "SimHei";
+	padding-left: 19px;
+	background: url(../img/login.png) no-repeat;
+	position: absolute;
+	right: 94px;
+	bottom: 21px;
+}
+
+#container {
+	width: 1280px;
+	margin: 0 auto;
+	background: #ededec;
+}
+#side {
+	width: 280px;
+	background: #2a2e3d;
+	float: left;
+	font-family: "SimHei";
+	padding-top: 17px;
+	height: 1196px;
+}
+#side .user {
+	width: 123px;
+	color: #ecebec;
+	overflow: hidden;
+	padding-left: 46px;
+}
+#side .user .avatar {
+	width: 55px;
+	height: 55px;
+	border: 1px solid #b9babe;
+	border-radius: 50%;
+	float: left;
+}
+#side .user .pic {
+	display: inline-block;
+	width: 47px;
+	height: 47px;
+	background: #b9babe;
+	border-radius: 100%;
+	margin:4px;
+}
+#side .user p {
+	float: right;
+	font-size: 16px;
+	padding-top: 20px;
+}
+#side .info {
+	color: #6e8095;
+	font-size: 16px;
+	padding-top: 23px;
+	overflow: hidden;
+	padding-left: 38px;
+}
+#side .info div {
+	width: 25px;
+	padding: 0 28px;
+	float: left;
+}
+#side .info .collection {
+	border-right: 1px solid #313645;
+}
+#side .info div span {
+	float: left;
+}
+#side .info span + span {
+	font-size: 12px;
+}
+#side .nav {
+	margin-top: 20px;
+}
+#side .nav li.cur a {
+	color: #dbdbde;
+	background: #383d4e;
+}
+#side .nav li > a {
+	color: #6e8095;
+	display: block;
+	height: 14px;
+	padding: 17px 0 17px 46px;
+}
+#side .nav li a:hover {
+	background: #383d4e;
+	color: #dbdbde;
+}
+#side .nav li b {
+	display: inline-block;
+	width: 25px;
+	height: 12px;
+	background-image: url(../img/icon.png);
+	background-repeat: no-repeat;
+	position: relative;
+	top: 2px;
+}
+#side .nav li.cur li a {
+	padding: 9px 0 9px 71px;
+	color: #6e8095;
+}
+#side .nav li.cur li a:hover, #side .nav li.cur li.cur > a {
+	color: #dbdbde;
+}
+#side .nav li li b {
+	width: 15px;
+	height: 12px;
+}
+#side .nav li li:first-child {
+	margin-top: -6px;
+}
+#side li.cur li.cur li a {
+	padding-left: 104px;
+}
+#side li.cur li.cur li:first-child {
+	margin-top: 0;
+}
+.form-selected {
+	background-position: 0 0;
+}
+.star {
+	background-position: 0 -14px;
+}
+.share {
+	background-position: 0 -26px;
+}
+.account {
+	background-position: 0 -40px;
+}
+.arrow {
+	background-position: 0 -101px;
+}
+.arrow-selected {
+	background-position: 0 -114px;
+}
+.form-sub {
+	background-position: 0 -56px;
+}
+.form-sub-selected {
+	background-position: 0 -71px;
+}
+.doc {
+	background-position: 0 -126px;
+}
+.dic-selected {
+	background-position: 0 -141px;
+}
+#main {
+	width: 1020px;
+	float: left;
+}

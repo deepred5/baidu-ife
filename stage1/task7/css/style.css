@@ -289,6 +289,8 @@ li {
 	width: 225px;
 	height: 390px;
 	cursor: pointer;
+	*zoom:1;
+	*display: inline;
 }
 #section5 dl:first-child {
 	margin-left: 0;
