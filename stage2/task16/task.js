@@ -20,7 +20,6 @@ window.onload = function() {
 		
 		var city = document.getElementById('aqi-city-input').value.trim();
 		var quality = document.getElementById('aqi-value-input').value.trim();
-		var warn = document.getElementsByTagName('em');
 		var reg1 = /^[\u4e00-\u9fa5a-zA-Z]+$/; // 匹配中英文字符
 		var reg2 = /^[0-9]+$/; // 匹配整数
 
