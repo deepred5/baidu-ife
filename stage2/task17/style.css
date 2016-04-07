@@ -1,0 +1,52 @@
+body {
+	font-family: "Microsoft YaHei";
+}
+fieldset {
+	float: left;
+	width: 35%;
+	border-radius: 10px;
+	margin: 20px;
+}
+fieldset + fieldset {
+	float: right;
+}
+select {
+	border-radius: 3px;
+}
+#aqi-chart-wrap {
+	width: 1200px;
+	clear: left;
+	margin: 0 auto;
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	margin-left: -600px;
+	text-align: center;
+}
+#aqi-chart-wrap div {
+	display: inline-block;
+	margin-left: 3px;
+	
+}
+.day div {
+	width: 6px;
+}
+.week div {
+	width: 50px;
+}
+.month div {
+	width: 150px;
+}
+
+/* #aqi-chart-wrap div:nth-child(1) {
+	height: 300px;
+	background: #fed;
+}
+#aqi-chart-wrap div:nth-child(2) {
+	height: 400px;
+	background: #fed;
+}
+#aqi-chart-wrap div:nth-child(3) {
+	height: 200px;
+	background: #fed;
+} */
