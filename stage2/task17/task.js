@@ -58,7 +58,8 @@ function randomColor() {
 
 // 记录当前页面的表单选项
 var pageState = {
-  nowSelectCity: -1,
+  // nowSelectCity: -1,
+  nowSelectCity: 1,
   nowGraTime: "day"
 }
 
@@ -96,15 +97,34 @@ function isTimeChange() {
       }
     }
 
-    console.log(pageState);
     return timeChanged;
   }
+
+/**
+ * 查找城市名
+ */
+function findCity(index) {
+  var city = [];
+  for (var i in aqiSourceData) {
+    if (aqiSourceData.hasOwnProperty(i)) {
+      city.push(i);
+    }
+  }
+  return city[index];
+}
+
 
 /**
  * 日期粒度为'day'时，设置chartData数据
  */
 function updateDataByDay() {
-
+  chartData = {};
+  var data = aqiSourceData[findCity(pageState.nowSelectCity)];
+  for (var i in data) {
+    if (data.hasOwnProperty(i) && !chartData[i]) {
+      chartData[i] = data[i];
+    }
+  }
 }
 
 /**
