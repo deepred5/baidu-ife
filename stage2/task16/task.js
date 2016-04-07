@@ -14,6 +14,8 @@ window.onload = function() {
 	 * 然后渲染aqi-list列表，增加新增的数据
 	 */
 	function addAqiData() {
+
+		// 增加String原型的trim()方法
 		String.prototype.trim = String.prototype.trim || function() {
 			return this.replace(/(^\s*)|(\s*$)/g, '');
 		};
@@ -28,7 +30,7 @@ window.onload = function() {
 		} else if (!reg2.test(quality)) {
 			alert('空气质量指数必须为整数');
 		} else {
-			aqiData[city] = quality;
+			aqiData[city] = Number(quality);
 			document.getElementById('aqi-city-input').value = '';
 			document.getElementById('aqi-value-input').value = '';
 		}
@@ -80,11 +82,16 @@ window.onload = function() {
 	 * 点击各个删除按钮的时候的处理逻辑
 	 * 获取哪个城市数据被删，删除数据，更新表格显示
 	 */
-	function delBtnHandle(event) {
+	function delBtnHandle(e) {
 	  //do sth.
-	  var city = event.target.parentNode.parentNode.getElementsByTagName('td')[0].innerHTML;
-	  delete aqiData[city];
-	  renderAqiList();
+	  var e = e || window.event;
+	  var target = e.target || e.srcElement;
+	  if (target && target.nodeName.toUpperCase() === 'BUTTON') { // 判断冒泡的元素是否为button
+	  	var city = target.parentNode.parentNode.getElementsByTagName('td')[0].innerHTML;
+	  	delete aqiData[city];
+	  	renderAqiList();
+	  }
+	 
 	}
 
 	function init() {
@@ -98,8 +105,8 @@ window.onload = function() {
 	  
 	  var aqiTable = document.getElementById('aqi-table');
 
-	  aqiTable.onclick = function(event) {
-	  	delBtnHandle(event)
+	  aqiTable.onclick = function(e) {
+	  	delBtnHandle(e)
 	  };
 
 	}
