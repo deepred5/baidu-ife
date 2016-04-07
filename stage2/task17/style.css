@@ -1,11 +1,13 @@
 body {
 	font-family: "Microsoft YaHei";
+	min-width: 750px;
 }
 fieldset {
 	float: left;
 	width: 35%;
 	border-radius: 10px;
 	margin: 20px;
+
 }
 fieldset + fieldset {
 	float: right;
