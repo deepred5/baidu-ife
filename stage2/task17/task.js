@@ -44,9 +44,12 @@ var aqiSourceData = {
 
 // 用于渲染图表的数据
 var chartData = {
-  '2016-01-01': 209,
-  '2016-01-02': 266,
-  '2016-01-03': 206
+  // '2016-01-01': 209,
+  // '2016-01-02': 266,
+  // '2016-01-03': 206
+  // '第1周': 209,
+  // '第2周': 266,
+  // '第3周': 206
 };
 
 // 用于随机产生柱状图的背景颜色
@@ -75,7 +78,8 @@ function renderChart() {
   for (var i in chartData) {
     if (chartData.hasOwnProperty(i)) {
       str += '<div style="height: ' + chartData[i] + 'px; background: ' + randomColor() + ';"' 
-              + 'title="date: ' + i + ' \nnum: ' + chartData[i] + '"></div>';
+              + 'title="date: ' + i + ' \nnum: ' + chartData[i] + '\ncity: ' + 
+              findCity(pageState.nowSelectCity) + '"></div>';
     }
   }
 
@@ -96,7 +100,7 @@ function isTimeChange() {
         break;
       }
     }
-
+    
     return timeChanged;
   }
 
@@ -114,6 +118,22 @@ function findCity(index) {
 }
 
 
+
+/**
+ * 根据当天判断这周还剩几天
+ */
+function getRemainDays(today) {
+  return today.getDay() ? 8 - today.getDay() : 1;
+}
+
+/**
+ * 根据当天判断这周已经过了几天
+ */
+function getPassDays(today) {
+  return today.getDay() ? today.getDay() : 7;
+}
+
+
 /**
  * 日期粒度为'day'时，设置chartData数据
  */
@@ -121,33 +141,72 @@ function updateDataByDay() {
   chartData = {};
   var data = aqiSourceData[findCity(pageState.nowSelectCity)];
   for (var i in data) {
-    if (data.hasOwnProperty(i) && !chartData[i]) {
+    if (data.hasOwnProperty(i) && !chartData.hasOwnProperty(i)) {
       chartData[i] = data[i];
     }
   }
+  console.log(data);
+  console.log(chartData);
 }
 
 /**
  * 日期粒度为'week'时，设置chartData数据
  */
 function updateDataByWeek() {
+  chartData = {};
+  var timeArr = [];
+  var week = 1;
+  var data = aqiSourceData[findCity(pageState.nowSelectCity)];
+
+  for (var i in data) {
+    if (data.hasOwnProperty(i)) {
+      timeArr.push(i);
+    }
+  }
+
+  var firstWeekDays = getRemainDays(new Date(timeArr[0]));
+  var lastWeekDays = getPassDays(new Date(timeArr[timeArr.length - 1]));
   
+  for (var i = 0, num = 0; i < firstWeekDays; i++) {
+    num += data[timeArr[i]];
+  } 
+
+  chartData['第' + week++ + '周'] = Math.round(num / firstWeekDays);
+
+  for (var i = firstWeekDays, index = 1, num = 0; i < timeArr.length - lastWeekDays; i++) {
+    num += data[timeArr[i]];
+    if (!(index % 7)) {
+      chartData['第' + week++ + '周'] = Math.round(num / 7);
+      num = 0;
+    }
+    index++;
+  }
+  
+  for (var i = timeArr.length - lastWeekDays, num = 0; i < timeArr.length; i++) {
+    num += data[timeArr[i]];
+  }
+
+  chartData['第' + week++ + '周'] = Math.round(num / lastWeekDays);
+  console.log(data);
+  console.log(chartData);
+
 }
 
 /**
  * 日期粒度为'month'时，设置chartData数据
  */
 function updateDataByMonth() {
-  
 }
 
 /**
  * 日、周、月的radio事件点击时的处理函数
  */
 function graTimeChange() {
+ 
   // 确定是否选项发生了变化 
-
   if (isTimeChange()) {
+
+    // 设置对应数据
     switch (pageState.nowGraTime) {
       case 'day':
         updateDataByDay();
@@ -159,11 +218,14 @@ function graTimeChange() {
         updateDataByMonth();
         break;
     }
+
+    // 调用图表渲染函数
+    renderChart();
   }
 
-  // 设置对应数据
 
-  // 调用图表渲染函数
+  
+  
 }
 
 /**
@@ -181,7 +243,10 @@ function citySelectChange() {
  * 初始化日、周、月的radio事件，当点击时，调用函数graTimeChange
  */
 function initGraTimeForm() {
-
+  var radio = document.getElementsByName('gra-time');
+  for (var i = 0; i < radio.length; i++) {
+    radio[i].onclick = graTimeChange;
+  }
 }
 
 /**

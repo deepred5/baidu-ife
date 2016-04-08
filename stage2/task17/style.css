@@ -7,6 +7,8 @@ fieldset {
 	width: 35%;
 	border-radius: 10px;
 	margin: 20px;
+	position: relative;
+	z-index: 2;
 
 }
 fieldset + fieldset {
@@ -28,10 +30,23 @@ select {
 #aqi-chart-wrap div {
 	display: inline-block;
 	margin-left: 3px;
+	animation: mymove .5s ease-in-out;
+	-webkit-animation: mymove .5s ease-out;
 	
 }
+@keyframes mymove {
+	from {
+		height: 0px;
+	}
+}
+
+@-webkit-keyframes mymove {
+	from {
+		height: 0px;
+	}
+}
 .day div {
-	width: 6px;
+	width: 10px;
 }
 .week div {
 	width: 50px;
