@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		ul {
+			padding: 0;
+		}
+		li {
+			float: left;
+			padding: 10px;
+			background: #cde;
+			margin-right: 10px;
+			list-style: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="text">
+	<input type="button" value="左侧入" id="left-in">
+	<input type="button" value="右侧入" id="right-in">
+	<input type="button" value="左侧出" id="left-out">
+	<input type="button" value="右侧出" id="right-out">
+	<ul id="list"></ul>
+	<script type="text/javascript">
+		var text = document.getElementById('text');
+		var leftIn = document.getElementById('left-in');
+		var rightIn = document.getElementById('right-in');
+		var leftOut = document.getElementById('left-out');
+		var rightOut = document.getElementById('right-out');
+		var list = document.getElementById('list');
+		var arr = [];
+
+		String.prototype.trim = String.prototype.trim || function() {
+			return this.replace(/(^\s*)|(\s*$)/g, '');
+		};
+
+		function isRight(num) {
+			if (!num.length) {
+				alert('请输入数据');
+				return false;
+			} else if (!(/^\d+$/.test(num))) {
+				alert('请输入数字');
+				return false
+			} else {
+				return true;
+			}
+		}
+
+		function getNum() {
+			return text.value.trim();
+		}
+
+		function addEvent(element, type, handler) {
+			if (element.addEventListener) {
+				element.addEventListener(type, handler, false);
+			} else if (element.attachEvent) {
+				element.attachEvent('on' + type, handler);
+			} else {
+				element['on' + type] = handler;
+			}
+		}
+
+		function render() {
+			var str = '';
+			arr.forEach(function(item, index) {
+				str += '<li>' + item + '</li>';
+			});
+			list.innerHTML = str;
+		}
+
+		addEvent(leftIn, 'click', function() {
+			var num = getNum();
+			if (isRight(num)) {
+				arr.unshift(parseInt(num));
+				render();
+			}
+		});
+
+		addEvent(rightIn, 'click', function() {
+			var num = getNum();
+			if (isRight(num)) {
+				arr.push(parseInt(num));
+				render();
+			}
+		});
+
+		addEvent(leftOut, 'click', function() {
+			if(arr.length) {
+				alert(arr.shift());
+				render();
+			} else {
+				alert('队列为空');
+			}
+		});
+
+		addEvent(rightOut, 'click', function() {
+			if (arr.length) {
+				alert(arr.pop());
+				render();
+			} else {
+				alert('队列为空');
+			}
+		});
+
+		addEvent(list, 'click', function(e) {
+			var e = e || window.event;
+			var target = e.target || e.srcElement;
+			if (target.nodeName === 'LI') {
+				arr.splice(Array.prototype.indexOf.call(list.childNodes, target), 1);
+				render();
+			}
+		})
+
+	</script>
+</body>
+</html>

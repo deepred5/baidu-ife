@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		ul {
+			padding: 0;
+		}
+		li {
+			float: left;
+			padding: 10px;
+			background: #cde;
+			margin-right: 10px;
+			list-style: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="text">
+	<input type="button" value="左侧入" id="left-in">
+	<input type="button" value="右侧入" id="right-in">
+	<input type="button" value="左侧出" id="left-out">
+	<input type="button" value="右侧出" id="right-out">
+	<ul id="list"></ul>
+	<script type="text/javascript">
+		var text = document.getElementById('text');
+		var leftIn = document.getElementById('left-in');
+		var rightIn = document.getElementById('right-in');
+		var leftOut = document.getElementById('left-out');
+		var rightOut = document.getElementById('right-out');
+		var list = document.getElementById('list');
+
+		String.prototype.trim = String.prototype.trim || function() {
+			return this.replace(/(^\s*)|(\s*$)/g, '');
+		};
+
+		function isRight(num) {
+			if (!num.length) {
+				alert('请输入数据');
+				return false;
+			} else if (isNaN(Number(num))) {
+				alert('请输入数字');
+				return false
+			} else {
+				return true;
+			}
+		}
+
+		function getNum() {
+			return text.value.trim();
+		}
+
+		function createNode(type, text) {
+			var eleNode = document.createElement(type);
+			var textNode = document.createTextNode(text);
+			eleNode.appendChild(textNode);
+			return eleNode;
+		}
+
+		leftIn.onclick = function() {
+			var num = getNum();
+			if (isRight(num)) {
+				// list.innerHTML = '<li>' + num + '</li>' + list.innerHTML;
+				var node = createNode('li', num);
+				list.insertBefore(node, list.firstChild);
+			}
+		}
+
+		rightIn.onclick = function() {
+			var num = getNum();
+			if (isRight(num)) {
+				// list.innerHTML += '<li>' + num + '</li>';
+				var node = createNode('li', num);
+				list.appendChild(node);
+			}
+		}
+
+		leftOut.onclick = function() {
+			if (list.hasChildNodes()) {
+				var firstChild = list.firstChild;
+				list.removeChild(firstChild);
+				alert(firstChild.innerHTML);
+			} else {
+				alert('队列为空');
+			}
+		}
+
+		rightOut.onclick = function() {
+			if (list.hasChildNodes()) {
+				var lastChild = list.lastChild;
+				list.removeChild(lastChild);
+				alert(lastChild.innerHTML);
+			} else {
+				alert('队列为空');
+			}
+		}
+
+		list.onclick = function(e) {
+			var e = e || window.event;
+			var target = e.target || e.srcElement;
+
+			if (target.nodeName === 'LI') {
+				list.removeChild(target);
+			}
+		}
+	</script>
+</body>
+</html>
