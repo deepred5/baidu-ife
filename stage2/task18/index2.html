@@ -106,7 +106,7 @@
 		});
 
 		addEvent(list, 'click', function(e) {
-			var e = e || window.event;
+			e = e || window.event;
 			var target = e.target || e.srcElement;
 			if (target.nodeName === 'LI') {
 				arr.splice(Array.prototype.indexOf.call(list.childNodes, target), 1);
