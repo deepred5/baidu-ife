@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		ul, li {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			min-width: 900px;
+		}
+		h3 {
+			text-align: center;
+		}
+		.wrapper {
+			text-align: center;
+		}
+		#list {
+			width: 900px;
+			height: 400px;
+			border: 1px solid #000;
+			border-radius: 10px;
+			margin: 50px auto;
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+		}
+		#list li {
+			list-style: none;
+			width: 15px;
+			margin-right: 5px;
+			background: #e7292d;
+		}
+		#list li.compare {
+			background: #fbc500;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<input type="text" id="text">
+		<input type="button" value="左侧入" id="unshift">
+		<input type="button" value="右侧入" id="push">
+		<input type="button" value="左侧出" id="shift">
+		<input type="button" value="右侧出" id="pop">
+		<input type="button" value="冒泡排序" id="bubble-sort">
+		<input type="button" value="随机生成数字" id="random">
+	</div>
+	<ul id="list"></ul>
+	<h3></h3>
+	<script type="text/javascript" src="task.js"></script>
+</body>
+</html>
