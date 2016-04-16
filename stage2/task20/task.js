@@ -38,7 +38,9 @@ function render() {
 function setIn(type) {
 	var data = getData(text);
 	if (isRight(data)) {
-		data = data.split(/[\s,，、 ]+/g);
+		data = data.split(/[\s,，、 ]+/g).filter(function(item) {
+			return item.length > 0;
+		});
 		data.forEach(function(item, index) {
 			arr[type](item);
 		});
