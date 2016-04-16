@@ -1,6 +1,5 @@
 
 var arr = [];
-var searchIndex = [];
 var text = document.getElementById('text');
 var leftIn = document.getElementById('unshift');
 var rightIn = document.getElementById('push');
@@ -74,24 +73,17 @@ rightOut.onclick = function() {
 
 searchBtn.onclick = function() {
 	var data = getData(search);
-	searchIndex.length = 0;
-	if (isRight(data) && arr.length) {
-
-		for (var i = 0; i < list.childNodes.length; i++) {
-			list.childNodes[i].removeAttribute('class');
-		}
-
-		arr.forEach(function(item, index) {
-			if (item.indexOf(data) !== -1) {
-				searchIndex.push(index);
-			}
-		});
+	
+	for (var i = 0; i < list.childNodes.length; i++) {
+		list.childNodes[i].removeAttribute('class');
 	}
 
-	if (searchIndex.length) {
-		searchIndex.forEach(function(item) {
-			list.childNodes[item].setAttribute('class', 'selected');
-		})
+	if (isRight(data) && arr.length) {
+		arr.forEach(function(item, index) {
+			if (item.indexOf(data) !== -1) {
+				list.childNodes[index].setAttribute('class', 'selected');
+			}
+		});
 	}
 
 }
