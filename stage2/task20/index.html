@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		ul {
+			padding: 0;
+		}
+		li {
+			float: left;
+			padding: 10px;
+			background: #cde;
+			margin-right: 10px;
+			list-style: none;
+			cursor: pointer;
+		}
+		.selected {
+			background: #fed;
+		}
+		textarea {
+			width: 180px;
+		}
+	</style>
+</head>
+<body>
+	<textarea id="text" placeholder="请用空格，逗号分隔字符"></textarea>
+	<input type="button" value="左侧入" id="unshift">
+	<input type="button" value="右侧入" id="push">
+	<input type="button" value="左侧出" id="shift">
+	<input type="button" value="右侧出" id="pop">
+	<input type="text" id="search">
+	<input type="button" value="查询" id="search-btn">
+	<ul id="list"></ul>
+	<script type="text/javascript" src="task.js"></script>
+</body>
+</html>
