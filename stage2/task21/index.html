@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div {
+			margin-top: 30px;
+		}
+		ul {
+			overflow: hidden;
+		}
+		li {
+			float: left;
+			padding: 10px;
+			margin: 0 10px 10px 0;
+			list-style: none;
+			cursor: pointer;
+		}
+		#tag-list li {
+			background: #cde;
+		}
+		#tag-list li:hover {
+			background: #e7292d;
+		}
+		#hobby-list li {
+			background: #fed;
+		}
+		#btn {
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<label>Tag: <input type="text" id="tag"></label>
+		<ul id="tag-list"></ul>
+	</div>
+	<div>
+		<textarea id="hobby"></textarea><br>
+		<input type="button" value="确认兴趣爱好" id="btn">
+		<ul id="hobby-list"></ul>
+	</div>
+	<script type="text/javascript" src="task.js"></script>
+</body>
+</html>
