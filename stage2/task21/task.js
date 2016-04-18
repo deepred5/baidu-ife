@@ -96,8 +96,8 @@ btn.addEventListener('click', function() {
 	if (arr.length) {
 		saveData(arr, hobbyArr, 10);
 		render(hobbyList, hobbyArr);
-		hobby.value = '';
 	}
+	hobby.value = '';
 
 
 }, false);
