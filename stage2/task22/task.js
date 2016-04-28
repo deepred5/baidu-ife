@@ -51,7 +51,7 @@ NodeTreeTraverse.prototype.show = function() {
 		}
 		i++;
 		if (i === that.nodeArr.length) {
-			clearInterval(this.timer);
+			clearInterval(that.timer);
 			setTimeout(function() {that.nodeArr[i-1].style.background = '#fff';}, 1000);
 		}
 	}, 1000);
