@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body {
+			font-family: "Microsoft YaHei";
+			min-width: 1300px;
+		}
+		input {
+			font-family: inherit;
+		}
+		#tree {
+			height: 300px;
+			width: 90%;
+			border: 2px solid #ccc;
+			margin: 20px;
+			display: flex;
+			transition: background-color .3s;
+		}
+		#tree div {
+			border: 2px solid #ccc;
+			display: flex;
+			flex-grow: 1;
+			margin: 30px 5px;
+			transition: background-color .3s;
+			background: #fff;
+
+		}
+		#traverse, #search, #add {
+			margin: 20px;
+		}
+		.selected, #tree .selected {
+			background: #f2f915;
+		}
+	</style>
+</head>
+<body>
+	<h1>多叉树遍历</h1>
+	<div id="tree">super
+		<div>cat
+			<div>apple
+				<div>pear</div>
+				<div>pig</div>
+			</div>
+			<div>phone</div>
+			<div>animal
+				<div>man</div>
+			</div>
+		</div>
+		<div>people
+			<div>human
+				<div>code</div>
+				<div>man</div>
+			</div>
+			<div>note
+				<div>program
+					<div>class</div>
+				</div>
+			</div>
+		</div>
+		<div>fish</div>
+	</div>
+	<div id="traverse">
+		<input type="button" value="广度优先遍历">
+		<input type="button" value="深度优先遍历">
+	</div>
+	<div id="search">
+		<input type="text">
+		<input type="button" value="广度优先搜索">
+		<input type="button" value="深度优先搜索">
+	</div>
+	<div id="add">
+		<input type="text">
+		<input type="button" value="添加节点">
+		<input type="button" value="删除节点">
+	</div>
+	<script type="text/javascript" src="task.js"></script>
+</body>
+</html>
